@@ -35,6 +35,15 @@ public class Vagar extends AlgoritmoMovimentacao {
         // super.alvo já contém a posição do alvo
         // agente (parâmetro) é a pose do agente que estamos guiando
         // ...
+        
+        double angulo = (Math.random()-Math.random())*maxAngular;
+        
+        output.velocidade = agente.getOrientacaoComoVetor().scl(maxVelocidade);
+        
+        output.rotacao = angulo;
+        
+        agente.olharNaDirecaoDaVelocidade(output.velocidade);
+        
         return output;
     }
 
